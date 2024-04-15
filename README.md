@@ -109,3 +109,6 @@ Fetch SHA-256 using tarball link
 Update Formula sha256
 
 Commit all formula changes and push to main
+
+`brew update`
+`brew upgrade tiny-sh-example`

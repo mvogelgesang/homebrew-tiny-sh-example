@@ -4,8 +4,8 @@
 class TinyShExample < Formula
     desc "A tiny shell script that is installable via homebrew. Given a GitHub username, returns the number of public repositories."
     homepage "https://github.com/mvogelgesang/homebrew-tiny-sh-example/tree/main"
-    url "https://github.com/mvogelgesang/homebrew-tiny-sh-example/archive/refs/tags/v0.0.1.tar.gz"
-    sha256 "d5de4b985e17000bb392bef087d3245697f553aa1d5035d4477e53d226415ab3"
+    url "https://github.com/mvogelgesang/homebrew-tiny-sh-example/archive/refs/tags/v0.0.2.tar.gz"
+    sha256 "0a39619a1b93d92d7eb60960c652689610123a5f714e655641ea3ba690c7bb9a"
     license "MIT"
   
     depends_on "jq"
