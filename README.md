@@ -10,35 +10,54 @@ A tiny shell script that is installable via homebrew. Given a GitHub username, r
 
 ## Goals
 
-- Create a simple shell script that can be installed via homebrew and run using the alias `tiny-sh-example`
-- Utilize one or more dependencies to ensure they get installed correctly
-- Document any missteps or gotchas along the way
+- [x] Create a simple shell script that can be installed via homebrew and run using the alias `tiny-sh-example`
+- [x] Utilize one or more dependencies to ensure they get installed correctly
+- [x] Document any missteps or gotchas along the way
 
 ## Initial Executable Version
 
-`mkdir homebrew-tiny-sh-example`
+The steps below document each step required to produce an executable that can be installed via homebrew.
+
+`mkdir homebrew-tiny-sh-example && cd homebrew-tiny-sh-example`
+
 `mkdir src/`
+
 `touch README.md`
+
 `touch src/run.sh`
+
 `git init`
+
 `git add -A`
+
 `git commit -m "initial commit"`
+
 `git push origin main`
+
 `git tag -a v0.0.1 -m "0.0.1"`
+
 `git push origin v0.0.1`
 
-Go to https://github.com/mvogelgesang/homebrew-tiny-sh-example/releases. 
-Create new release, auto generate release notes.
-Copy link to tar.gz source code
+- Go to https://github.com/mvogelgesang/homebrew-tiny-sh-example/releases. 
+- Create new release, auto generate release notes. Publish.
+- Copy link to tar.gz source code
 
 `HOMEBREW_NO_INSTALL_FROM_API=1`
+
 `brew tap --force homebrew/core`
+
+Create a new Formula
+
 `brew create https://github.com/mvogelgesang/homebrew-tiny-sh-example/archive/refs/tags/v0.0.1.tar.gz`
 
-Copy contents of file into `Formula/tiny-sh-example.sh`
+You will receive a warning that a sha hash was not provided but that one was calculated for you, that's ok.
+
+Copy contents of file into `./Formula/tiny-sh-example.sh`
 
 `git add -A`
+
 `git commit -m "Added formula"`
+
 `git push origin main`
 
 Let's try tapping the formula and installing it
@@ -98,17 +117,18 @@ Try running it
 
 ## Updating
 
-Make changes to the code, readme, etc. Commit and push to `main`
-Create tag `git tag -a {versionNumber} -m {versionNumber}` push to main
-Create new release from tag
-Copy tarball link, update Formula
-Fetch SHA-256 using tarball link
+- Make changes to the code, readme, etc. Commit and push to `main`
+- Create tag `git tag -a {versionNumber} -m {versionNumber}` push to main
+- Create new release from tag
+- Copy tarball link, update Formula
+- Fetch SHA-256 using tarball link
 
 `curl -L {tarballLink} | shasum -a 256`
 
-Update Formula sha256
-
-Commit all formula changes and push to main
+- Update Formula sha256
+- Commit all formula changes and push to main
+- Update `tiny-sh-example` to latest version
 
 `brew update`
+
 `brew upgrade tiny-sh-example`
